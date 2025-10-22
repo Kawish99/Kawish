@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kawish Hassan Wazir - Economist & Data Analyst</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header-content .title {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+        
+        /* Contact Info */
+        .contact-info {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            margin: 0.5rem;
+            text-align: center;
+        }
+        
+        /* Section Styles */
+        section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .skill-category {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        /* Experience Timeline */
+        .experience-item {
+            margin-bottom: 2rem;
+            padding-left: 1rem;
+            border-left: 3px solid #3498db;
+        }
+        
+        .job-title {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.1rem;
+        }
+        
+        .company {
+            color: #3498db;
+            font-style: italic;
+        }
+        
+        .date {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        .responsibilities {
+            margin-top: 0.5rem;
+            padding-left: 1rem;
+        }
+        
+        .responsibilities li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Education */
+        .education-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .degree {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        /* Languages */
+        .languages {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .language {
+            background: #e8f4fc;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        
+        /* Profile Section */
+        .profile-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>KAWISH HASSAN WAZIR</h1>
+                <div class="title">ECONOMIST & DATA ANALYST</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <div class="contact-item">📞 03400369368</div>
+            <div class="contact-item">✉️ WAZIRKAWISH@YAHOO.COM</div>
+            <div class="contact-item">🏠 House No 1397, Street No 03 I-11/2 Islamabad, Pakistan</div>
+        </div>
+
+        <!-- Profile Section -->
+        <section id="profile">
+            <h2>PROFESSIONAL PROFILE</h2>
+            <p class="profile-text">
+                As a recent graduate in economics, I am equipped with a range of Excel skills, including data cleaning, entry, and dashboard creation on IBM Cognos and Excel. My strong motivation to continually improve and advance professionally drives me to pursue skill enhancement opportunities. My creative abilities also allow me to generate memorable ideas for future campaigns with confidence.
+            </p>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>TECHNICAL SKILLS & EXPERTISE</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Data Analysis</h3>
+                    <p>Data Cleaning • Data Visualization • Essentials for Data Analysis</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Software</h3>
+                    <p>MS-Office • IBM Cognos • Excel for Data Analytics</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Professional Skills</h3>
+                    <p>Effective Communication • Team Leadership • Time Management</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Economic Analysis</h3>
+                    <p>GDP Calculation • SNA • Market/Non-Market Output • GVA Compilation</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience -->
+        <section id="experience">
+            <h2>WORK EXPERIENCE</h2>
+            <div class="experience-item">
+                <div class="job-title">Intern</div>
+                <div class="company">Pakistan Bureau of Statistics</div>
+                <div class="date">July 2023 - September 2023</div>
+                <ul class="responsibilities">
+                    <li>Acquired in-depth understanding of institute operations and GDP calculation approaches</li>
+                    <li>Gained expertise in SNA, Market Output, Non-Market Output, and output for own final use</li>
+                    <li>Developed skills in compiling GVA, GDP growth rate, and inflation analysis</li>
+                    <li>Calculated and created reports for SPI, CPI, and WPI</li>
+                    <li>Participated in team training for leadership, communication, and time management</li>
+                    <li>Learned about Digital Census operations and large-scale data collection methodologies</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education">
+            <h2>EDUCATION</h2>
+            <div class="education-item">
+                <div class="degree">BS Economics</div>
+                <div class="institution">National Defence University Islamabad</div>
+                <div class="date">2019-2023</div>
+            </div>
+            <div class="education-item">
+                <div class="degree">Higher Secondary School</div>
+                <div class="institution">Public School and College Skardu</div>
+                <div class="date">2016-2018</div>
+            </div>
+        </section>
+
+        <!-- Languages -->
+        <section id="languages">
+            <h2>LANGUAGES</h2>
+            <div class="languages">
+                <span class="language">English</span>
+                <span class="language">Urdu</span>
+                <span class="language">Balti</span>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
