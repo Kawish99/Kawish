@@ -16,6 +16,7 @@
             background: #0f0f0f;
             color: #ffffff;
             line-height: 1.6;
+            overflow-x: hidden;
         }
         
         .container {
@@ -31,6 +32,7 @@
             display: flex;
             align-items: center;
             text-align: center;
+            position: relative;
         }
         
         .hero-content h1 {
@@ -39,12 +41,23 @@
             background: linear-gradient(45deg, #fff, #e0e0e0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
         
         .hero-content .tagline {
             font-size: 1.5rem;
             opacity: 0.9;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+        
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .cta-button {
@@ -55,11 +68,16 @@
             text-decoration: none;
             border-radius: 30px;
             font-weight: bold;
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
         }
         
         .cta-button:hover {
             transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+            background: #ff5252;
         }
         
         /* Sections */
@@ -74,51 +92,107 @@
             background: linear-gradient(45deg, #667eea, #764ba2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            font-weight: 700;
         }
         
         /* Skills Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
         
         .skill-card {
             background: #1a1a1a;
-            padding: 2rem;
-            border-radius: 15px;
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
             text-align: center;
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
             border: 1px solid #333;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .skill-card:hover::before {
+            left: 100%;
         }
         
         .skill-card:hover {
             transform: translateY(-10px);
             border-color: #667eea;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
         }
         
         .skill-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
         }
         
-        /* Projects */
+        .skill-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        
+        .skill-card p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+        
+        /* Projects/Experience */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
         }
         
         .project-card {
             background: #1a1a1a;
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
             border: 1px solid #333;
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #667eea;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
         
         .project-content {
-            padding: 1.5rem;
+            padding: 2rem;
+        }
+        
+        .project-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+        
+        .project-card em {
+            color: #667eea;
+            font-style: normal;
+            font-weight: 600;
+        }
+        
+        .project-card p {
+            color: #ccc;
+            margin-top: 1rem;
+            line-height: 1.6;
         }
         
         /* Contact */
@@ -131,17 +205,89 @@
         
         .contact-link {
             background: #1a1a1a;
-            padding: 1rem 2rem;
-            border-radius: 10px;
+            padding: 1.2rem 2.5rem;
+            border-radius: 15px;
             text-decoration: none;
             color: white;
             border: 1px solid #333;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
         }
         
         .contact-link:hover {
             border-color: #667eea;
             transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+            background: #1f1f1f;
+        }
+        
+        /* Education */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .education-card {
+            background: #1a1a1a;
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+        }
+        
+        .education-card:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-link {
+                width: 200px;
+                justify-content: center;
+            }
+        }
+        
+        /* Scroll animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
         }
     </style>
 </head>
@@ -149,11 +295,11 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content fade-in">
                 <h1>KAWISH WAZIR</h1>
                 <div class="tagline">Economist & Data Analyst</div>
-                <p>Transforming data into insights • Building dashboards that tell stories</p>
-                <a href="#projects" class="cta-button">View My Work</a>
+                <p>Transforming complex data into actionable insights • Creating dashboards that drive decisions • Passionate about economic research and data storytelling</p>
+                <a href="#experience" class="cta-button">Explore My Journey</a>
             </div>
         </div>
     </section>
@@ -163,9 +309,10 @@
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <p style="font-size: 1.2rem; margin-bottom: 2rem;">
-                    I'm an economist passionate about data analysis, visualization, and turning complex numbers into actionable insights. 
-                    I specialize in creating meaningful dashboards and reports that drive decision-making.
+                <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #ccc; line-height: 1.8;">
+                    I'm a passionate economist with expertise in data analysis, visualization, and economic research. 
+                    I specialize in transforming raw data into meaningful insights through interactive dashboards and comprehensive reports. 
+                    My experience at Pakistan Bureau of Statistics honed my skills in economic indicators and large-scale data analysis.
                 </p>
             </div>
         </div>
@@ -174,54 +321,60 @@
     <!-- Skills Section -->
     <section class="section" style="background: #1a1a1a;">
         <div class="container">
-            <h2 class="section-title">What I Do</h2>
+            <h2 class="section-title">My Expertise</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <div class="skill-icon">📊</div>
+                    <span class="skill-icon">📊</span>
                     <h3>Data Analysis</h3>
-                    <p>Data cleaning, transformation, and insightful analysis using modern tools</p>
+                    <p>Expert in data cleaning, transformation, and statistical analysis using advanced Excel functions and data processing tools</p>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">📈</div>
+                    <span class="skill-icon">📈</span>
                     <h3>Dashboard Creation</h3>
-                    <p>Interactive dashboards using IBM Cognos, Excel, and data visualization tools</p>
+                    <p>Building interactive and insightful dashboards using IBM Cognos, Excel, and data visualization platforms</p>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">💼</div>
+                    <span class="skill-icon">💼</span>
                     <h3>Economic Research</h3>
-                    <p>GDP calculation, economic indicators, and market analysis</p>
+                    <p>GDP calculation, economic indicators analysis, market research, and comprehensive economic reporting</p>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">🔧</div>
-                    <h3>Tools & Tech</h3>
-                    <p>MS Office, IBM Cognos, Data Visualization, Statistical Analysis</p>
+                    <span class="skill-icon">🔧</span>
+                    <h3>Technical Tools</h3>
+                    <p>MS Office Suite, IBM Cognos Analytics, Data Visualization, Statistical Methods, Economic Modeling</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Experience Section -->
-    <section class="section" id="projects">
+    <section class="section" id="experience">
         <div class="container">
-            <h2 class="section-title">Experience</h2>
+            <h2 class="section-title">Professional Experience</h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-content">
                         <h3>Pakistan Bureau of Statistics</h3>
-                        <p><em>Intern | Jul 2023 - Sep 2023</em></p>
-                        <p style="margin-top: 1rem;">
-                            Worked on GDP calculation, economic indicators, and large-scale data analysis. 
-                            Gained expertise in SNA, market output analysis, and economic reporting.
+                        <p><em>Intern | July 2023 - September 2023</em></p>
+                        <p>
+                            • Conducted GDP calculation and economic indicator analysis<br>
+                            • Gained expertise in SNA and market output analysis<br>
+                            • Created comprehensive reports for SPI, CPI, and WPI<br>
+                            • Participated in Digital Census operations training<br>
+                            • Developed leadership and team collaboration skills
                         </p>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-content">
-                        <h3>Data Analytics</h3>
-                        <p><em>Specialist</em></p>
-                        <p style="margin-top: 1rem;">
-                            Creating comprehensive dashboards and reports for SPI, CPI, and WPI. 
-                            Transforming raw data into meaningful business intelligence.
+                        <h3>Data Analytics Specialist</h3>
+                        <p><em>Freelance & Projects</em></p>
+                        <p>
+                            • Transform complex datasets into actionable business intelligence<br>
+                            • Create interactive dashboards for data-driven decision making<br>
+                            • Specialize in economic data visualization and reporting<br>
+                            • Develop comprehensive analytical frameworks<br>
+                            • Provide insights for strategic planning and analysis
                         </p>
                     </div>
                 </div>
@@ -229,16 +382,57 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Education Section -->
     <section class="section" style="background: #1a1a1a;">
         <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
-            <div class="contact-links">
-                <a href="mailto:WAZIRKAWISH@YAHOO.COM" class="contact-link">📧 Email</a>
-                <a href="tel:03400369368" class="contact-link">📞 Call</a>
-                <a href="#" class="contact-link">💼 LinkedIn</a>
+            <h2 class="section-title">Education</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>BS Economics</h3>
+                    <p><em>National Defence University Islamabad</em></p>
+                    <p style="color: #667eea; margin-top: 0.5rem;">2019 - 2023</p>
+                    <p style="color: #ccc; margin-top: 1rem;">Comprehensive education in economic theory, quantitative methods, and data analysis</p>
+                </div>
+                <div class="education-card">
+                    <h3>Higher Secondary School</h3>
+                    <p><em>Public School and College Skardu</em></p>
+                    <p style="color: #667eea; margin-top: 0.5rem;">2016 - 2018</p>
+                    <p style="color: #ccc; margin-top: 1rem;">Foundation in mathematics and sciences with focus on analytical thinking</p>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Contact Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-links">
+                <a href="mailto:WAZIRKAWISH@YAHOO.COM" class="contact-link">
+                    <span>📧</span> Email Me
+                </a>
+                <a href="tel:03400369368" class="contact-link">
+                    <span>📞</span> Call Me
+                </a>
+                <a href="#" class="contact-link">
+                    <span>💼</span> LinkedIn
+                </a>
+            </div>
+            <div style="text-align: center; margin-top: 3rem; color: #666;">
+                <p>📍 House No 1397, Street No 03 I-11/2 Islamabad, Pakistan</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Simple fade-in animation for elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.skill-card, .project-card, .education-card');
+            elements.forEach((element, index) => {
+                element.style.animationDelay = `${index * 0.1}s`;
+                element.classList.add('fade-in');
+            });
+        });
+    </script>
 </body>
 </html>
